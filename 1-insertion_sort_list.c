@@ -31,11 +31,11 @@ void insertion_sort_list(listint_t **list)
 	listint_t *goBack, *head = *list, *tmp, *prv;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
-		return;
+	return;
 
-    for (goBack = head->next; goBack; goBack = tmp)
-    {
-        tmp = goBack->next;
+	for (goBack = head->next; goBack; goBack = tmp)
+	{
+		tmp = goBack->next;
 		prv = goBack->prev;
 
 		while (prv && goBack->n < prv->n)
@@ -43,5 +43,5 @@ void insertion_sort_list(listint_t **list)
 			swap(list, &prv, goBack);
 			print_list((const listint_t *)*list);
 		}
-    }
+	}
 }

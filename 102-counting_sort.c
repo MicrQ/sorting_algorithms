@@ -20,7 +20,7 @@ void counting_sort(int *array, size_t size)
 	for (i = 1; i < size; i++)
 		if (array[i] > max)
 			max = array[i];
-	frq = malloc(sizeof(int) * max + 1);
+	frq = malloc(sizeof(int) * (max + 1));
 	if (!frq)
 		return;
 
@@ -30,10 +30,9 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < size; i++)
 		frq[array[i]]++;
 
-	for (j = 0; j < max; j++)
-		printf("%d, ", frq[j]);
-	printf("%d\n", frq[j]);
-
+	for (j = 1; j <= max; j++)
+		frq[j] += frq[j - 1];
+	print_array(frq, max + 1);
 	i = 0;
 	for (j = 0; j < max + 1; j++)
 	{
@@ -44,4 +43,5 @@ void counting_sort(int *array, size_t size)
 			frq[j]--;
 		}
 	}
+	free(frq);
 }

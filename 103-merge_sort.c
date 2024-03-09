@@ -113,4 +113,5 @@ void merge(int *arr, size_t low, size_t mid, size_t high)
 			printf(", ");
 	}
 	printf("\n");
+	free(mix);
 }

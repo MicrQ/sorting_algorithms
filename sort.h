@@ -2,6 +2,7 @@
 #define SORT_H
 
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -25,6 +26,12 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 
+/**
+ * The following functions are implemented after the deadline of the
+ * project. on the second sprint break of ALX.
+*/
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+
 
 #endif
